@@ -1,3 +1,4 @@
-from heimdallr.exception.param_exception import ParamException
-from heimdallr.exception.smtp_exception import SMTPException
-from heimdallr.exception.wecom_exception import WecomException
+from heimdallr.exception.auth import AuthException
+from heimdallr.exception.param import ParamException
+from heimdallr.exception.smtp import SMTPException
+from heimdallr.exception.wecom import WecomException

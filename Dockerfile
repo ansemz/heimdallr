@@ -1,11 +1,9 @@
-FROM python:3.11.6-slim
+FROM python:3.13.1-slim
 WORKDIR /app
 
 RUN adduser --disabled-password --gecos '' appuser
 
 RUN pip install poetry && poetry config virtualenvs.create false
-
-ENV PORT=9000
 
 # dependencies
 COPY pyproject.toml poetry.lock ./
@@ -13,6 +11,11 @@ RUN poetry install --no-dev
 
 USER appuser
 COPY heimdallr ./heimdallr
-COPY env.py main.py ./
+COPY main.py ./
 
-CMD python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+ARG HEIMDALLR_VERSION
+ENV HEIMDALLR_VERSION=$HEIMDALLR_VERSION
+ARG COMMIT_ID
+ENV COMMIT_ID=$COMMIT_ID
+
+CMD ["python", "main.py"]

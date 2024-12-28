@@ -1,7 +1,9 @@
 .idea
 .vscode
+.DS_Store
 venv
 config/config.json
+.env
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -9,3 +11,4 @@ __pycache__/
 *$py.class
 
 .mypy_cache
+*.bin

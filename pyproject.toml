@@ -8,20 +8,26 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.108.0"
-uvicorn = "^0.25.0"
-requests = "^2.31.0"
-python-multipart = "^0.0.6"
+fastapi = "^0.115.0"
+uvicorn = "^0.34.0"
+requests = "^2.32.0"
+python-multipart = "^0.0.20"
+environs = "^11.0.0"
+types-requests = "^2.31.0.20240125"
+apprise = "^1.7.4"
+filetype = "^1.2.0"
 
 
 [tool.poetry.group.dev.dependencies]
-pre-commit = "^3.6.0"
-black = "^23.12.1"
+pre-commit = "^4.0.0"
+black = "^24.0.0"
 isort = "^5.13.2"
 autoflake = "^2.2.1"
+memray = "^1.11.0"
 
 [tool.isort]
 profile = "black"
+
 
 [build-system]
 requires = ["poetry-core"]
